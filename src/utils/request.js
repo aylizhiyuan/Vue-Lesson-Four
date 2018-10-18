@@ -15,7 +15,7 @@ import  { getToken } from '@/utils/auth'
 
 //创建一个axios的实例对象
 const service = axios.create({
-  baseURL:process.env.BASE_API, //api的基地址
+  baseURL:process.env.BASE_API, //api的基地址,在config的dev_env.js里面修改
   timeout:5000 //请求超时的时间
 })
 //设置请求前的拦截器
