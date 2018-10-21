@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+
+//模版的默认样式
+import Layout from '../views/layout/Layout'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+  mode:'history', //后端支持可以开启
+  scrollBehavior:()=>({y:0}),
+  routes:constantRouterMap
 })
