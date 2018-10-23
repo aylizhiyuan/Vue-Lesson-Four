@@ -9,18 +9,9 @@ Vue.use(Router)
 
 //静态路由的配置参数在这里面
 export const constantRouterMap = [
-  //{ path: '/login', component: () => import('@/views/login/index'), hidden: true },
-  //{ path: '/404', component: () => import('@/views/404'), hidden: true },
   {
     path:'/',
-    component:Layout,
-    redirect:'/dashboard',
-    name:'Dashboard',
-    hidden:true,
-    children:[{
-      path:'dashboard',
-      component:()=>import('@/views/dashboard/index')
-    }]
+    component:Layout
   },
   { path: '*', redirect: '/404', hidden: true }
 ]
