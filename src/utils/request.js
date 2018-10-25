@@ -35,8 +35,41 @@ service.interceptors.request.use(
 )
 //响应的拦截器
 service.interceptors.response.use(
-  response=>response,
+  response=>{
+    //自定义的错误
+    const res = response.data
+    if(res.code !== 200){
+      Message({
+        message:res.message,
+        type:'error',
+        duration:5*1000
+      })
+      //token验证失败或者是token过期的时候必须拦截处理下
+      //我们可以规定401的错误
+      if(res.code === 401){
+        Message.confirm(
+          '你已被登出,可以取消继续留在该页面,或者重新登录',
+          '确定登出',
+          {
+            confirmButtonText:'重新登录',
+            cancelButtonText:'取消登录',
+            type:'warning'
+          }
+        ).then(()=>{
+          store.dispatch('FedLogOut').then(()=>{
+            location.reload() //为了重新实例vue-router
+          })
+        })
+      }
+      return Promise.reject('error')
+    }else{
+      //如果没有错误的话，就直接结果返回
+      return response.data
+    }
+  },
   error => {
+    //这种错误是拦截时候的错误
+    //为了debug的时候方便
     console.log('err' + error)
     Message({
       message:error.message,

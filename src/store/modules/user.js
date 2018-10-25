@@ -1,4 +1,6 @@
+//登录/获取用户信息/登出的请求
 import {login,logout,getInfo} from '@/api/login'
+//设置/获取/删除token的方法
 import {getToken,setToken,removeToken} from "@/utils/auth"
 const user = {
   state:{
@@ -23,6 +25,7 @@ const user = {
   },
   actions:{
     //登录
+    //
     Login({commit},userInfo){
       const username = userInfo.username.trim()
       return new Promise((resolve,reject)=>{
