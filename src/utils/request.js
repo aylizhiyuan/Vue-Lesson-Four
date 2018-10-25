@@ -38,7 +38,7 @@ service.interceptors.response.use(
   response=>{
     //自定义的错误
     const res = response.data
-    if(res.code !== 200){
+    if(res.code !== 20000){
       Message({
         message:res.message,
         type:'error',
