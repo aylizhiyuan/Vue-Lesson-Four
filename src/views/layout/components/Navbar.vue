@@ -1,6 +1,8 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
+    <!--切换的那个图标-->
     <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
+    <!--面包屑导航-->
     <breadcrumb />
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
