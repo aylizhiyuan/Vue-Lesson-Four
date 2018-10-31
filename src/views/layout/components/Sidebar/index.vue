@@ -24,11 +24,15 @@
           'sidebar'
         ]),
         routes(){
+          //当前的路由信息都在里面
           return this.$router.options.routes
         },
         isCollapse(){
           return !this.sidebar.opened
         }
+      },
+      mounted(){
+
       }
     }
 </script>

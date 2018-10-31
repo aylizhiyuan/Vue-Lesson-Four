@@ -44,14 +44,17 @@
         AppLink
       },
       props:{
+        //一个路由信息，可能是一个单独的路由，也可能会有子路由
         item:{
           type:Object,
           required:true
         },
+        //只有在加载子路由的时候，这个值才是true
         isNest:{
           type:Boolean,
           default:false
         },
+        //路由的路径部分
         basePath:{
           type:String,
           default:''
@@ -64,6 +67,8 @@
       },
       methods:{
         hasOneShowingChild(children,parent){
+          //children是子路由
+          //parent是父路由
           const showingChildren = children.filter(item=>{
             if(item.hidden){
               return false
