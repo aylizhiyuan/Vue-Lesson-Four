@@ -30,7 +30,7 @@
     methods: {
       getBreadcrumb() {
         const { params } = this.$route
-        console.log(this.$route.matched)
+        //console.log(this.$route.matched)
         let matched = this.$route.matched.filter(item => {
           if (item.name) {
             // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
