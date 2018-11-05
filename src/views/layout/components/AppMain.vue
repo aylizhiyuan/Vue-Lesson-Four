@@ -1,6 +1,5 @@
 <template>
   <section class="app-main">
-    <h1>主体内容部分</h1>
     <transition name="fade-transform" mode="out-in">
       <!-- or name="fade" -->
       <!-- <router-view :key="key"></router-view> -->
