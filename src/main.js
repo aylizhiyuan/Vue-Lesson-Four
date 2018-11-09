@@ -23,6 +23,7 @@ import '@/permission'
 //数据
 import './mock'
 
+
 Vue.use(ElementUI,{locale})
 
 Vue.config.productionTip = false

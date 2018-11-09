@@ -9,8 +9,21 @@ Vue.use(Router)
 
 //静态路由的配置参数在这里面
 export const constantRouterMap = [
-  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
-  { path: '/404', component: () => import('@/views/404'), hidden: true },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/errorPage/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/errorPage/401'),
+    hidden: true
+  },
   {
     path: '/',
     component: Layout,
@@ -33,12 +46,20 @@ export const constantRouterMap = [
         meta:{title:'测试表单',icon:'form'}
       }
     ]
-  },
-  { path: '*', redirect: '/404', hidden: true }
+  }
 ]
 
 export default new Router({
-  mode:'history', //后端支持可以开启
+  //mode:'history', //后端支持可以开启
   scrollBehavior:()=>({y:0}),
   routes:constantRouterMap
 })
+
+//动态的路由配置,下面的路由如果登录用户没有足够的权限是看不到的
+export const asyncRouterMap = [
+  {
+    path: '/permission',
+    component:()=>import('@/views/permission/index'),
+  },
+  { path: '*', redirect: '/404', hidden: true }
+];
