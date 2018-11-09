@@ -20,6 +20,8 @@ import store from './store'
 import '@/icons'
 //权限
 import '@/permission'
+//数据
+//import './mock'
 
 Vue.use(ElementUI,{locale})
 

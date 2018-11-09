@@ -5,14 +5,15 @@
   "author": "lizhiyuan <148334733@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "cross-env BABEL_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "cross-env NODE_ENV=production env_config=prod node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.8",
     "js-cookie": "^2.2.0",
+    "mockjs": "^1.0.1-beta3",
     "normalize.css": "^8.0.0",
     "nprogress": "^0.2.0",
     "vue": "^2.5.2",
@@ -31,6 +32,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
