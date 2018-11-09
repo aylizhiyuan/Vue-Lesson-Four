@@ -7,7 +7,8 @@ import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api 的 base_url
+  //使用测试mock数据可以暂时不用baseURI
+  /*baseURL: process.env.BASE_API, // api 的 base_url*/
   timeout: 5000, // request timeout
 })
 
