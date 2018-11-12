@@ -59,7 +59,20 @@ export default new Router({
 export const asyncRouterMap = [
   {
     path: '/permission',
-    component:()=>import('@/views/permission/index'),
+    component:Layout,
+    redirect:'/permission/index',
+    meta:{title:'测试权限',icon:'lock',roles:['admin']},
+    children:[
+      {
+        path:'index',
+        name:'测试权限',
+        component:()=>import('@/views/permission/index'),
+        meta:{
+          title:"测试权限",
+          roles:['admin']
+        }
+      }
+    ]
   },
   { path: '*', redirect: '/404', hidden: true }
 ];

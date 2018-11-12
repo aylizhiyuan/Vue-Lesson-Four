@@ -84,6 +84,7 @@
           //如果没有子路由
           if(showingChildren.length === 0){
             this.onlyOneChild = { ... parent, path: '', noShowingChildren: true}
+            return true
           }
           return false
         },
